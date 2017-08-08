@@ -36,7 +36,34 @@ Selenium测试设计技术
   见示例：POI floder
 log4j日志
 异常处理
+  当我们正在开发测试中，我们要确保，即使测试失败的脚本可以继续执行。如果最坏的情况都处理不好意外的异常会被抛出。
+  如果发生异常，由于无法找到元素，或者预期的结果不与实际值相符，我们应该抓住这个异常并结束测试的逻辑方式，以防脚本本身突然终止。
+  如果没有找到(因为任何好的理由)元素，我们应该确保走出的功能顺利。所以，总是需要有try-catch块，如果想要的跟做的是一样的。
+  public static WebElement lnk_percent_calc(WebDriver driver)throws Exception
+{
+  try
+  {
+    element = driver.findElement(By.xpath(".//*[@id='menu']/div[4]/div[3]/a"));
+    return element;
+  }
+  catch (Exception e1)
+  {
+    // Add a message to your Log File to capture the error
+      Logger.error("Link is not found.");
+    
+    // Take a screenshot which will be helpful for analysis.
+    File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	FileUtils.copyFile(screenshot, new File("D:frameworkscreenshots.jpg"));	
+    
+    throw(e1);
+  }
+}
 多浏览器测试
 捕捉屏幕截图
 捕获视频
-
+  有时候我们未必能够分析故障只需用日志文件或截图的帮助。有时捕获完整的执行视频帮助。让我们了解如何捕捉视频。
+  我们将利用Monte媒体库的执行相同。
+  compile group: 'com.github.stephenc.monte', name: 'monte-screen-recorder', version: '0.7.7.0'
+  见示例：webdriverdemo.java
+  
+ 
