@@ -23,6 +23,17 @@ Selenium测试设计技术
   存在与之关联的各种计算器，并在特定的页面的那些对象中的每一个在一个单独的类文件为静态方法创建，他们都在'测试'class文件中的静态方法将被访问的对象进行访   问。
   见实例：page_objects_perc_calc
 使用Excel参数化
+  在设计测试，参数化测试是不可避免的。我们会利用Apache的POI- Excel JAR实现是一样的。它可以帮助我们来读取和写入到Excel中。
+  Excel文档分为XLS（针对Excel 97-2003）格式和XLSX（针对Excel 2007及以后版本）格式，不同格式所需的JAR包依赖是不一样的。
+  a. 下面的依赖仅支持XLS格式：
+     <groupId>org.apache.poi</groupId>  
+     <artifactId>poi</artifactId>  
+     <version>3.11-beta1</version>
+  b. 以下依赖既支持XLS格式，也支持XLSX格式：
+     <groupId>org.apache.poi</groupId>  
+     <artifactId>poi-ooxml</artifactId>  
+     <version>3.11-beta1</version>
+  见示例：POI floder
 log4j日志
 异常处理
 多浏览器测试
