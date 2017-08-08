@@ -66,4 +66,5 @@ log4j日志
   compile group: 'com.github.stephenc.monte', name: 'monte-screen-recorder', version: '0.7.7.0'
   见示例：webdriverdemo.java
   
- 
+ Selenium执行操作时高亮对象
+   见示例：testHighLigthWebdriver.java
