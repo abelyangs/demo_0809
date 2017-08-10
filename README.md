@@ -68,3 +68,59 @@ log4j日志
   
  Selenium执行操作时高亮对象
    见示例：testHighLigthWebdriver.java
+   
+   
+   
+   
+   
+   
+   
+   
+   
+ Everybody is good, now I'm going to demonstrate the GLR test automation project.
+Believe that you have some idea of the test automation framework we use,
+For these keywords BDD, Cummber, Selenium WebDriver, the Grid is also not strange, you are right, our project is to use them.
+This Demo I will not tell their basic knowledge,
+but to focus on the design of test system and to use them after my project workflow.
+
+Let's look at some of the frameworks involved in the design, as well as important components.
+As everybody knows, the Selenium ACTS on the webelements properties.example id,name,xpath and so on.
+we set these elements together to create an object repository,you can create them in a static funtion.
+
+Using Excel parameterized data 
+We haven't used it yet,can add it If later need.
+
+Log and report 
+We use two kinds of report, extents report and cucumber report,Moments later to show you.
+
+
+If an exception occurs, unable to find elements, or the expected result is not consistent with the actual value, we should get  this exception, in case the script itself abruptly.
+We should ensure that out of function well, so, always need to have a try-catch.
+
+It refers to the selenium grid technology,Achieve the purpose of testing on multiple machines.
+
+We added a screenshot feature when the test failed or ended.
+
+
+Next, I'd like to run a few test cases for everyone to see.
+In execution, in order to clearly see the selenium operation, before implementation I added highlight to elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+   
+   
+
